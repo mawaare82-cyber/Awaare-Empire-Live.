@@ -1,36 +1,34 @@
-export default function Page() {
+// Koodhkan ku rid faylkaaga: app/page.js
+
+export default function Home() {
+  const businesses = [
+    { name: "Awaare Empire Juice", path: "/juice", icon: "🥤" },
+    { name: "Harqanka Dharka", path: "/tailoring", icon: "🧵" },
+    { name: "Timajar", path: "/barbershop", icon: "✂️" },
+    { name: "Marqaan", path: "/marqaan", icon: "☕" },
+    { name: "Qalabka Baabuurta", path: "/car-parts", icon: "🚗" },
+  ];
+
   return (
-    <div className="p-6 bg-slate-50 min-h-screen">
-      <h1 className="text-4xl font-extrabold text-center text-orange-600 mb-8 tracking-tight">
-        Awaare Empire Menu
-      </h1>
-
-      <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        {/* Modern Drinks Section */}
-        <div className="bg-white p-6 rounded-2xl shadow-lg border border-blue-100">
-          <h2 className="text-2xl font-bold mb-4 text-blue-700 border-b pb-2">Modern Drinks</h2>
-          <ul className="space-y-4">
-            <li className="flex items-center text-lg">🧊 Classic Mint Mojito</li>
-            <li className="flex items-center text-lg">🍓 Strawberry Smoothie</li>
-            <li className="flex items-center text-lg">🧋 Iced Spanish Latte</li>
-            <li className="flex items-center text-lg">🍫 Chocolate Milkshake</li>
-            <li className="flex items-center text-lg">💎 Blue Lagoon Mocktail</li>
-            <li className="flex items-center text-lg">🍑 Peach Iced Tea</li>
-          </ul>
-        </div>
-
-        {/* Traditional Juices Section */}
-        <div className="bg-white p-6 rounded-2xl shadow-lg border border-green-100">
-          <h2 className="text-2xl font-bold mb-4 text-green-700 border-b pb-2">Traditional Juices</h2>
-          <ul className="space-y-4">
-            <li className="flex items-center text-lg">🥭 Mango Papaya (Isbitaal)</li>
-            <li className="flex items-center text-lg">🍋 Lemon Mint</li>
-            <li className="flex items-center text-lg">🍉 Fresh Watermelon</li>
-            <li className="flex items-center text-lg">🍮 Creamy Custard</li>
-            <li className="flex items-center text-lg">🍊 Mango Float</li>
-            <li className="flex items-center text-lg">🍌 Mixed Fruit Cocktail</li>
-          </ul>
-        </div>
+    <div style={{ padding: "20px", textAlign: "center" }}>
+      <h1>Awaare Empire Dashboard</h1>
+      <div style={{ display: "grid", gap: "20px", marginTop: "20px" }}>
+        {businesses.map((biz) => (
+          <a key={biz.name} href={biz.path} style={{ 
+            padding: "20px", border: "1px solid #ccc", borderRadius: "10px", 
+            textDecoration: "none", color: "black", fontSize: "20px" 
+          }}>
+            {biz.icon} {biz.name}
+          </a>
+        ))}
+      </div>
+      
+      {/* Qaybta Caawinta (Contact Support) */}
+      <div style={{ marginTop: "40px", padding: "20px", background: "#f9f9f9" }}>
+        <h3>Qaybta Caawinta</h3>
+        <p>Ma u baahan tahay gargaar? Nagala soo xiriir:</p>
+        <a href="https://wa.me/YOUR_PHONE_NUMBER" style={{ margin: "10px" }}>WhatsApp</a>
+        <a href="tel:YOUR_PHONE_NUMBER" style={{ margin: "10px" }}>Wacid</a>
       </div>
     </div>
   );
